@@ -1,0 +1,15 @@
+# Thought this was interesting so I saved it for use later:
+
+ my $CURRENT_DIR           = $FindBin::Bin;
+ my $CURRENT_DATA_DIR      = $CURRENT_DIR . "/incoming";
+ my $CURRENT_LOG_DIR       = $CURRENT_DIR . "/logs";
+ my $CURRENT_ARCHIVE_DIR   = $CURRENT_DATA_DIR . "/archive";
+ my $CURRENT_ERROR_DIR     = $CURRENT_DATA_DIR . "/error";
+ my $CURRENT_BATCH_DIR     = $CURRENT_DIR . "/batch_files";
+ my $CURRENT_BATCH_ARCHIVE = $CURRENT_BATCH_DIR . "/archive";
+
+ ( -d $_ or mkdir($_) )
+   for (
+     $CURRENT_DATA_DIR,  $CURRENT_LOG_DIR,   $CURRENT_ARCHIVE_DIR,
+     $CURRENT_ERROR_DIR, $CURRENT_BATCH_DIR, $CURRENT_BATCH_ARCHIVE
+   );
